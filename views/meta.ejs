@@ -1,24 +1,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="<%= keywords %>" />
-<meta name="description" content="150 words"/>
-<meta name="subject" content="your website's subject">
-<meta name="copyright"content="company name">
-<meta name="topic" content="">
-<meta name="summary" content="">
-<meta name="Classification" content="Business">
-<meta name="author" content="name, email@hotmail.com">
-<meta name="url" content="http://www.websiteaddrress.com">
-<meta name="identifier-URL" content="http://www.websiteaddress.com">
-<meta name="category" content="">
+<meta name="keywords" content="<%= post.keywords %>" />
+<meta name="description" content="<%= post.description %>"/>
+<meta name="subject" content="<%= post.subject %>">
+<meta name="author" content="<%= post.author %>">
+<meta name="url" content="<%= fullUrl %>">
+<meta name="identifier-URL" content="<%= website %>">
 <meta name="coverage" content="Worldwide">
 <meta name="distribution" content="Global">
-<meta name="og:title" content="The Rock"/>
-<meta name="og:type" content="movie"/>
-<meta name="og:url" content="http://www.imdb.com/title/tt0117500/"/>
-<meta name="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
-<meta name="og:site_name" content="IMDb"/>
-<meta name="og:description" content="A group of U.S. Marines, under command of..."/>
-<meta name="og:email" content="me@example.com"/>
-<!-- <meta name="og:phone_number" content="650-123-4567"/> -->
-<!-- <meta name="og:country-name" content="USA"/> -->
+<meta name="og:title" content="<%= post.title %>"/>
+<meta name="og:url" content="<%= fullUrl %>"/>
+<meta name="og:image" content="<%= post.image %>"/><!-- logo -->
+<meta name="og:site_name" content="<%= fullUrl %>"/><!-- taboo gyan -->
+<meta name="og:description" content="<%= post.description %>"/>
+<meta property="og:type" content="article" />
+
