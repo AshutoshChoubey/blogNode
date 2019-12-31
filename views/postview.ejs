@@ -1,0 +1,61 @@
+<%- include htmlst.ejs %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+    <link type="text/css" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include nav.ejs %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                &nbsp;
+            </div>
+            <div class="col-sm-8">
+                    <% for(var i=0; i < post.length; i++) { %>
+                        <article>
+                            <header>
+                                <h2>
+                                    <a href="<%= website %>/post/<%= post[i].slug %>"> <%= post[i].title %></a>
+                                    <a  href="<%= website %>/post/<%= post[i].slug %>" target="_blank">
+                                        <i class="fa fa-external-link"></i>
+                                    </a>
+                                </h2>
+                            </header>
+                            <div><img src="<%= website %>/public/<%= post[i].image %>" alt="<%= website %>/post/<%= post[i].title %>" class="img-thumbnail"></div>
+                            <div class="meta">
+                                    <span class="meta-date"><b>On</b> <%= post[i].createdDate.toDateString() %></span>
+                                   
+                                    </div> 
+                                    <p ><%= post[i].description %></p>
+                        </article>
+                       
+                     <% } %>
+                
+            </div>
+            <div class="col-sm-2">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</body>
+<%- include footer.ejs %>
+<script>
+    $("#share").jsSocials({
+        shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "whatsapp"]
+    });
+
+</script>
+
+</html>
